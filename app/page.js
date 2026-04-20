@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import ProductCard from '@/components/ProductCard';
 import { products } from '../lib/data';
 import styles from './page.module.css';
 
@@ -36,26 +36,11 @@ export default function Home() {
           {/* This is the fixed div / grid that automatically updates from the products array */}
           <div className={`${styles.grid} animate-fade-in-up`} style={{ animationDelay: '0.2s' }}>
             {products.map((product) => (
-              <a 
+              <ProductCard 
                 key={product.id} 
-                href={product.affiliateLink} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className={styles.card}
-              >
-                <div className={styles.imageWrapper}>
-                  {/* Using standard img for external flexibility */}
-                  <img src={product.imageUrl} alt={product.title} loading="lazy" />
-                </div>
-                <div className={styles.cardContent}>
-                  <h3 className={styles.cardTitle}>{product.title}</h3>
-                  <p className={styles.cardDesc}>{product.description}</p>
-                  <div className={styles.cardFooter}>
-                    <span className={styles.price}>{product.price}</span>
-                    <button className={styles.buyButton}>View Deal</button>
-                  </div>
-                </div>
-              </a>
+                product={product} 
+                styles={styles} 
+              />
             ))}
           </div>
         </section>

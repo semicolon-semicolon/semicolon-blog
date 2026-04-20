@@ -147,6 +147,19 @@
   flex-grow: 1;
 }
 
+.readMoreLink {
+  color: var(--brand-color);
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 0.5rem;
+  transition: opacity 0.2s ease;
+}
+
+.readMoreLink:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
 .cardFooter {
   display: flex;
   justify-content: space-between;
